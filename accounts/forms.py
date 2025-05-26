@@ -60,28 +60,28 @@ class CustomerForm(forms.ModelForm):
         widgets = {
             'first_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter first name'
+                'placeholder': 'Ism'
             }),
             'last_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter last name'
+                'placeholder': 'Familiya'
             }),
             'address': forms.Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter address',
+                'placeholder': 'Manzil',
                 'rows': 3
             }),
             'email': forms.EmailInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter email'
+                'placeholder': 'Email'
             }),
             'phone': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter phone number'
+                'placeholder': 'Telefon raqam'
             }),
             'loyalty_points': forms.NumberInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter loyalty points'
+                'placeholder': 'Imtiyoz ballari'
             }),
         }
 

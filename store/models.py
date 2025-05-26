@@ -30,7 +30,7 @@ class Category(models.Model):
         """
         String representation of the category.
         """
-        return f"Category: {self.name}"
+        return f"Kategoriya: {self.name}"
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -54,8 +54,8 @@ class Item(models.Model):
         String representation of the item.
         """
         return (
-            f"{self.name} - Category: {self.category}, "
-            f"Quantity: {self.quantity}"
+            f"{self.name} - Kategoriya: {self.category}, "
+            f"Miqdori: {self.quantity}"
         )
 
     def get_absolute_url(self):
@@ -90,7 +90,7 @@ class Delivery(models.Model):
     location = models.CharField(max_length=20, blank=True, null=True)
     date = models.DateTimeField()
     is_delivered = models.BooleanField(
-        default=False, verbose_name='Is Delivered'
+        default=False, verbose_name='Yetkazib berildi deb belgilash'
     )
 
     def __str__(self):
@@ -98,6 +98,6 @@ class Delivery(models.Model):
         String representation of the delivery.
         """
         return (
-            f"Delivery of {self.item} to {self.customer_name} "
-            f"at {self.location} on {self.date}"
+            f"Yetkazib berish {self.item} ga {self.customer_name} "
+            f"{self.location} ga {self.date} da"
         )

@@ -4,12 +4,12 @@
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Delete Item</legend>
-            <h5>Are you sure you want to delete the item "{{ object.name }}"</h5>
+            <legend class="border-bottom mb-4">Elementni o'chirish</legend>
+            <h5>Haqiqatan ham elementni oʻchirib tashlamoqchimisiz "{{ object.name }}"</h5>
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-danger btn-sm" type="submit">Yes, Delete</button>
-            <a class="btn btn-outline-success btn-sm" href="{% url 'productslist' %}">Cancel</a>
+            <button class="btn btn-outline-danger btn-sm" type="submit">O'chirish</button>
+            <a class="btn btn-outline-success btn-sm" href="{% url 'productslist' %}">Bekor qilish</a>
         </div>
     </form>
 </div>

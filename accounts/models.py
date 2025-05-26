@@ -41,29 +41,29 @@ class Profile(models.Model):
         options={'quality': 100}
     )
     telephone = PhoneNumberField(
-        null=True, blank=True, verbose_name='Telephone'
+        null=True, blank=True, verbose_name='Telefon raqam'
     )
     email = models.EmailField(
         max_length=150, blank=True, null=True, verbose_name='Email'
     )
     first_name = models.CharField(
-        max_length=30, blank=True, verbose_name='First Name'
+        max_length=30, blank=True, verbose_name='Ism'
     )
     last_name = models.CharField(
-        max_length=30, blank=True, verbose_name='Last Name'
+        max_length=30, blank=True, verbose_name='Familiya'
     )
     status = models.CharField(
         choices=STATUS_CHOICES,
         max_length=12,
         default='INA',
-        verbose_name='Status'
+        verbose_name='Holat'
     )
     role = models.CharField(
         choices=ROLE_CHOICES,
         max_length=12,
         blank=True,
         null=True,
-        verbose_name='Role'
+        verbose_name='Turi'
     )
 
     @property
@@ -86,25 +86,25 @@ class Profile(models.Model):
     class Meta:
         """Meta options for the Profile model."""
         ordering = ['slug']
-        verbose_name = 'Profile'
-        verbose_name_plural = 'Profiles'
+        verbose_name = 'Profil'
+        verbose_name_plural = 'Profillar'
 
 
 class Vendor(models.Model):
     """
     Represents a vendor with contact and address information.
     """
-    name = models.CharField(max_length=50, verbose_name='Name')
+    name = models.CharField(max_length=50, verbose_name='Nomi')
     slug = AutoSlugField(
         unique=True,
         populate_from='name',
         verbose_name='Slug'
     )
     phone_number = models.BigIntegerField(
-        blank=True, null=True, verbose_name='Phone Number'
+        blank=True, null=True, verbose_name='Telefon raqam'
     )
     address = models.CharField(
-        max_length=50, blank=True, null=True, verbose_name='Address'
+        max_length=50, blank=True, null=True, verbose_name='Manzil'
     )
 
     def __str__(self):
@@ -115,8 +115,8 @@ class Vendor(models.Model):
 
     class Meta:
         """Meta options for the Vendor model."""
-        verbose_name = 'Vendor'
-        verbose_name_plural = 'Vendors'
+        verbose_name = 'Sotuvchi'
+        verbose_name_plural = 'Sotuvchilar'
 
 
 class Customer(models.Model):

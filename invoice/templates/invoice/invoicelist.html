@@ -3,7 +3,7 @@
 {% load querystring from django_tables2 %}
 {% load static %}
 
-{% block title %}Invoices{% endblock title %}
+{% block title %}Invoys{% endblock title %}
 
 {% block content %}
 <div class="container p-5">
@@ -14,10 +14,10 @@
   </style>
     <div class="mb-3">
         <a class="btn btn-success btn-sm" href="{% url 'invoice-create' %}">
-            <i class="fa-solid fa-plus me-2"></i> Create Invoice
+            <i class="fa-solid fa-plus me-2"></i> Hisob-faktura yaratish
         </a>
         <a class="float-end btn btn-success btn-sm" href="{% querystring '_export'='xlsx' %}">
-            <i class="fa-solid fa-download me-2"></i> Export to Excel
+            <i class="fa-solid fa-download me-2"></i> Excelga eksport qilish
         </a>
     </div>
 
@@ -26,15 +26,15 @@
             <thead class="thead-light">
                 <tr>
                     <th scope="col"><a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">ID <i class="fa-solid fa-sort"></i></a></th>
-                    <th scope="col">Customer Name <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Phone Number <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Item <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Price per Item <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Quantity <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Total <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Shipping <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Grand Total <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Mijoz nomi <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Telefon raqami <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Element <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Tovar boshiga narx <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Miqdori <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Jami <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Yetkazib berish<i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Umumiy jami <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Harakat</th>
                 </tr>
             </thead>
             <tbody>
@@ -84,7 +84,7 @@
                 {% for i in paginator.page_range %}
                 {% if page_obj.number == i %}
                 <li class="page-item active" aria-current="page">
-                    <span class="page-link">{{ i }} <span class="visually-hidden">(current)</span></span>
+                    <span class="page-link">{{ i }} <span class="visually-hidden">(hozirgi)</span></span>
                 </li>
                 {% else %}
                 <li class="page-item">

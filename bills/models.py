@@ -8,7 +8,7 @@ class Bill(models.Model):
     slug = AutoSlugField(unique=True, populate_from='date')
     date = models.DateTimeField(
         auto_now_add=True,
-        verbose_name='Date (e.g., 2022/11/22)'
+        verbose_name='Dana (masalan, 2024/11/22)'
     )
     institution_name = models.CharField(
         max_length=30,
@@ -18,39 +18,39 @@ class Bill(models.Model):
     phone_number = models.PositiveIntegerField(
         blank=True,
         null=True,
-        help_text='Phone number of the institution'
+        help_text='Tashkilotning telefon raqami'
     )
     email = models.EmailField(
         blank=True,
         null=True,
-        help_text='Email address of the institution'
+        help_text='Tashkilotning elektron pochta manzili'
     )
     address = models.CharField(
         max_length=255,
         blank=True,
         null=True,
-        help_text='Address of the institution'
+        help_text='Tashkilot manzili'
     )
     description = models.CharField(
         max_length=255,
         blank=True,
         null=True,
-        help_text='Description of the bill'
+        help_text="Ko'proq ma'lumotlar"
     )
     payment_details = models.CharField(
         max_length=255,
         blank=False,
         null=False,
-        help_text='Details of the payment'
+        help_text="To'lov tafsilotlari"
     )
     amount = models.FloatField(
-        verbose_name='Total Amount Owing',
-        help_text='Total amount due for payment'
+        verbose_name='Jami qarz miqdori',
+        help_text="To'lanishi kerak bo'lgan umumiy miqdor"
     )
     status = models.BooleanField(
         default=False,
-        verbose_name='Paid',
-        help_text='Payment status of the bill'
+        verbose_name="To'langan",
+        help_text="To'lov holati"
     )
 
     def __str__(self):

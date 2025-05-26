@@ -24,19 +24,19 @@ class Invoice(models.Model):
     slug = AutoSlugField(unique=True, populate_from='date')
     date = models.DateTimeField(
         auto_now=True,
-        verbose_name='Date (e.g., 2022/11/22)'
+        verbose_name='Sana (masalan, 2024/11/22)'
     )
     customer_name = models.CharField(max_length=30)
     contact_number = models.CharField(max_length=13)
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    price_per_item = models.FloatField(verbose_name='Price Per Item')
+    price_per_item = models.FloatField(verbose_name='Tovar boshiga narx')
     quantity = models.FloatField(default=0.00)
-    shipping = models.FloatField(verbose_name='Shipping and Handling')
+    shipping = models.FloatField(verbose_name='Yetkazib berish va yuklash')
     total = models.FloatField(
-        verbose_name='Total Amount', editable=False
+        verbose_name='Umumiy hisob', editable=False
     )
     grand_total = models.FloatField(
-        verbose_name='Grand Total', editable=False
+        verbose_name='Umumiy jami', editable=False
     )
 
     def save(self, *args, **kwargs):

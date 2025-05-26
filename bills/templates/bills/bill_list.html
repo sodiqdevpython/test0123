@@ -3,8 +3,6 @@
 {% load querystring from django_tables2 %}
 {% load static %}
 
-{% block title %}Bills{% endblock title %}
-
 {% block content %}
 <div class="container p-5">
     <style>
@@ -29,16 +27,16 @@
     {% comment %}
     <form method="GET" class="container mb-3">
         {{ filter.form }}
-        <button type="submit" class="btn btn-sm btn-success fa fa-search"> Search</button>
+        <button type="submit" class="btn btn-sm btn-success fa fa-search"> Qidirish</button>
     </form>
     {% endcomment %}
 
     <div class="mb-3">
         <a class="btn btn-success btn-sm" href="{% url 'bill_create' %}">
-            <i class="fa-solid fa-plus me-2"></i> Add a Bill Record
+            <i class="fa-solid fa-plus me-2"></i> Hisob qaydnomasini qo'shing
         </a>
         <a class="float-end btn btn-success btn-sm" href="{% querystring '_export'='xlsx' %}">
-            <i class="fa-solid fa-download me-2"></i> Export to Excel
+            <i class="fa-solid fa-download me-2"></i> Excelga eksport qilish
         </a>
     </div>
 
@@ -47,14 +45,14 @@
             <thead class="thead-light">
                 <tr>
                     <th scope="col"><a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">ID <i class="fa-solid fa-sort"></i></a></th>
-                    <th scope="col">Name <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Description <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Contact Number <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Ism <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Tavsif <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Aloqa raqami <i class="fa-solid fa-sort"></i></th>
                     <th scope="col">Email <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Payment Details <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Amount <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Status <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Toʻlov tafsilotlari <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Miqdor <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Holati <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Harakat</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,11 +68,11 @@
                     <td>
                         {% if bill.status %}
                             <span class="badge badge-pill bg-soft-success text-success me-2">
-                                Paid
+                                To'langan
                             </span>
                         {% else %}
                             <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                                Pending
+                                Kutilmoqda
                             </span>
                         {% endif %}
                     </td>
@@ -113,7 +111,7 @@
                 {% for i in paginator.page_range %}
                 {% if page_obj.number == i %}
                 <li class="page-item active" aria-current="page">
-                    <span class="page-link">{{ i }} <span class="visually-hidden">(current)</span></span>
+                    <span class="page-link">{{ i }} <span class="visually-hidden">(hozirgi)</span></span>
                 </li>
                 {% else %}
                 <li class="page-item">

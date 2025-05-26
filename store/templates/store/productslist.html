@@ -10,14 +10,14 @@
         <div class="card shadow-sm rounded p-3">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h4 class="display-6 mb-0 text-success">Products</h4>
+                    <h4 class="display-6 mb-0 text-success">Mahsulot</h4>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end gap-2">
                     <a class="btn btn-success btn-sm rounded-pill shadow-sm" href="{% url 'product-create' %}">
-                        <i class="fa-solid fa-plus"></i> Add Item
+                        <i class="fa-solid fa-plus"></i> Element qo'shish
                     </a>
                     <a class="btn btn-success btn-sm rounded-pill shadow-sm" href="{% querystring '_export'='xlsx' %}">
-                        <i class="fa-solid fa-download"></i> Export to Excel
+                        <i class="fa-solid fa-download"></i> Excelga eksport qilish
                     </a>
                 </div>
             </div>
@@ -35,13 +35,13 @@
             <thead class="thead-light">
                 <tr>
                     <th scope="col"><a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">ID <i class="fa-solid fa-sort"></i></a></th>
-                    <th scope="col">Name <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Category <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Quantity <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Price <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Expiring Date <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Vendor <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Nomi <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Kategoriya <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Miqdori <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Narxi <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Yaroqlilik muddati <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Sotuvchi <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Harakat</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,10 +56,10 @@
                     <td>{{ item.vendor }}</td>
                     <td>
                         <a class="btn btn-outline-info btn-sm" href="{% url 'product-update' item.slug %}">
-                            <i class="fa-solid fa-pen"></i> Edit
+                            <i class="fa-solid fa-pen"></i> Tahrirlash
                         </a>
                         <a class="btn btn-outline-danger btn-sm float-end" href="{% url 'product-delete' item.slug %}">
-                            <i class="fa-solid fa-trash"></i> Delete
+                            <i class="fa-solid fa-trash"></i> O'chirish
                         </a>
                     </td>
                 </tr>
@@ -87,7 +87,7 @@
             {% for i in paginator.page_range %}
             {% if page_obj.number == i %}
             <li class="page-item active" aria-current="page">
-                <span class="page-link">{{ i }} <span class="visually-hidden">(current)</span></span>
+                <span class="page-link">{{ i }} <span class="visually-hidden">(hozirgi)</span></span>
             </li>
             {% else %}
             <li class="page-item">

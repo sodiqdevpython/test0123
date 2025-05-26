@@ -104,7 +104,7 @@
     </style>
     <div class="form">
       <div>
-        <strong class="navbar-brand" style="font-size: 26px;">Inventory<span class="text-warning">ms</span></strong>
+        <strong class="navbar-brand" style="font-size: 26px;">Inventarizatsiya<span class="text-warning"></span></strong>
       </div>
       <div class="text-danger">
         {% if messages %} {% for message in messages %}
@@ -124,20 +124,20 @@
       <form class="login-form" method="POST">
         {% csrf_token %}
         <p>{{ message }}</p>
-        <label>Username</label>
+        <label>Foydalanuvchi nomi</label>
         <span class="text-danger">{{ form.username.errors }}</span>
         {{form.username}}
         <label>Email</label>
         <span class="text-danger">{{ form.email.errors }}</span>
         {{form.email}}
-        <label>Enter Password</label>
+        <label>Parolni kiriting</label>
         <span class="text-danger">{{ form.password.errors }}</span>
         {{form.password1}}
-        <label>Confirm Password</label>
+        <label>Parolni tasdiqlang</label>
         <span class="text-danger">{{ form.password2.errors }}</span>
         {{form.password2}}
-        <button  type="submit" name="button">Register</button>
-        <p class="message">Already have an account? <a href="{% url 'user-login' %}">Login</a></p>
+        <button  type="submit" name="button">Roʻyxatdan oʻtish</button>
+        <p class="message">Hisobingiz bormi? <a href="{% url 'user-login' %}">Kirish</a></p>
       </form>
     </div>
   </div>

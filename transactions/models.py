@@ -58,9 +58,9 @@ class Sale(models.Model):
         Returns a string representation of the Sale instance.
         """
         return (
-            f"Sale ID: {self.id} | "
-            f"Grand Total: {self.grand_total} | "
-            f"Date: {self.date_added}"
+            f"Sotish ID: {self.id} | "
+            f"Umumiy jami: {self.grand_total} | "
+            f"Sana: {self.date_added}"
         )
 
     def sum_products(self):
@@ -103,9 +103,9 @@ class SaleDetail(models.Model):
         Returns a string representation of the SaleDetail instance.
         """
         return (
-            f"Detail ID: {self.id} | "
-            f"Sale ID: {self.sale.id} | "
-            f"Quantity: {self.quantity}"
+            f"Tafsilot identifikatori: {self.id} | "
+            f"Sotish ID: {self.sale.id} | "
+            f"Miqdor: {self.quantity}"
         )
 
 

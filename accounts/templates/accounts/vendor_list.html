@@ -7,11 +7,11 @@
     <div class="card shadow-sm rounded p-3">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h4 class="display-6 mb-0 text-success">Vendors</h4>
+                <h4 class="display-6 mb-0 text-success">Sotuvchilar</h4>
             </div>
             <div class="col-md-6 d-flex justify-content-end gap-2">
                 <a class="btn btn-success btn-sm rounded-pill shadow-sm" href="{% url 'vendor-create' %}">
-                    <i class="fa-solid fa-plus"></i> Add Vendor
+                    <i class="fa-solid fa-plus"></i> Sotuvchini qo'shing
                 </a>
             </div>
         </div>
@@ -27,10 +27,10 @@
     <table class="table table-bordered table-striped">
         <thead class="thead-light">
             <tr>
-                <th>Name</th>
-                <th>Phone Number</th>
-                <th>Address</th>
-                <th>Actions</th>
+                <th>Ism</th>
+                <th>Telefon raqam</th>
+                <th>Manzil</th>
+                <th>Harakat</th>
             </tr>
         </thead>
         <tbody>
@@ -41,10 +41,10 @@
                 <td>{{ vendor.address }}</td>
                 <td>
                     <a href="{% url 'vendor-update' vendor.pk %}" class="btn btn-outline-warning btn-sm">
-                        <i class="fas fa-edit me-2"></i>Edit
+                        <i class="fas fa-edit me-2"></i>Tahrirlash
                     </a>
                     <a href="{% url 'vendor-delete' vendor.pk %}" class="btn btn-outline-danger btn-sm">
-                        <i class="fas fa-trash-alt me-2"></i>Delete
+                        <i class="fas fa-trash-alt me-2"></i>O'chirish
                     </a>
                 </td>
             </tr>

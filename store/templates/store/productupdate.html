@@ -1,10 +1,6 @@
 {% extends "store/base.html" %}
 {% load static %}
 
-{% block title %}
-    Add Product
-{% endblock title %}
-
 {% block content %}
 <div class="container my-5">
     <div class="row justify-content-center">
@@ -12,21 +8,21 @@
             <div class="card shadow-sm border-light">
                 <div class="card-body">
                     <h1 class="text-center mb-4">
-                        Update Product
+                        Mahsulotni yangilash
                     </h1>
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="{{ form.name.id_for_label }}" class="form-label">
-                                    Product Name
+                                    Mahsulot nomi
                                 </label>
                                 {{ form.name }}
                                 <div class="text-danger">{{ form.name.errors }}</div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="{{ form.category.id_for_label }}" class="form-label">
-                                    Category
+                                    Kategoriya
                                 </label>
                                 {{ form.category }}
                                 <div class="text-danger">{{ form.category.errors }}</div>
@@ -35,7 +31,7 @@
                         <div class="row">
                             <div class="col mb-3">
                                 <label for="{{ form.description.id_for_label }}" class="form-label">
-                                    Description
+                                    Ko'proq ma'lumot
                                 </label>
                                 {{ form.description }}
                                 <div class="text-danger">{{ form.description.errors }}</div>
@@ -44,14 +40,14 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="{{ form.quantity.id_for_label }}" class="form-label">
-                                    Quantity
+                                    Miqdor
                                 </label>
                                 {{ form.quantity }}
                                 <div class="text-danger">{{ form.quantity.errors }}</div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="{{ form.price.id_for_label }}" class="form-label">
-                                    Selling Price
+                                    Sotuv narxi
                                 </label>
                                 {{ form.price }}
                                 <div class="text-danger">{{ form.price.errors }}</div>
@@ -60,14 +56,14 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="{{ form.expiring_date.id_for_label }}" class="form-label">
-                                    Expiring Date
+                                    Yaroqlilik muddati
                                 </label>
                                 {{ form.expiring_date }}
                                 <div class="text-danger">{{ form.expiring_date.errors }}</div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="{{ form.vendor.id_for_label }}" class="form-label">
-                                    Vendor
+                                    Sotuvchi
                                 </label>
                                 {{ form.vendor }}
                                 <div class="text-danger">{{ form.vendor.errors }}</div>
@@ -75,7 +71,7 @@
                         </div>
                         <div class="form-group text-center">
                             <button class="btn btn-success btn-lg" type="submit">
-                                <i class="fas fa-check"></i> Submit
+                                <i class="fas fa-check"></i> Yuborish
                             </button>
                         </div>
                     </form>

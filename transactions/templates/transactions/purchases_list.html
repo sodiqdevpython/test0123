@@ -6,14 +6,14 @@
     <div class="card shadow-sm rounded p-3">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h4 class="display-6 mb-0 text-success">Purchases</h4>
+                <h4 class="display-6 mb-0 text-success">Xaridlar</h4>
             </div>
             <div class="col-md-6 d-flex justify-content-end gap-2">
                 <a class="btn btn-success btn-sm rounded-pill shadow-sm" href="{% url 'purchase-create' %}">
-                    <i class="fa-solid fa-plus"></i> Add Purchase Order
+                    <i class="fa-solid fa-plus"></i> Buyurtmani qo'shish
                 </a>
                 <a class="btn btn-success btn-sm rounded-pill shadow-sm" href="{% url 'purchases-export' %}">
-                    <i class="fa-solid fa-download"></i> Export to Excel
+                    <i class="fa-solid fa-download"></i> Excelga eksport qilish
                 </a>
             </div>
         </div>
@@ -30,13 +30,13 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">ID <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Name <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Quantity <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Price <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Delivery Status <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Delivery Date <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Vendor <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Action</th>
+                <th scope="col">Nomi <i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Miqdori <i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Narxi <i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Yetkazib berish holati <i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Yetkazib berish sanasi <i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Sotuvchi <i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Harakat</th>
             </tr>
         </thead>
         <tbody>
@@ -49,11 +49,11 @@
                 <td>
                     {% if purchase.delivery_status == 'P' %}
                         <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                            Pending
+                            Kutilmoqda
                         </span>
                     {% else %}
                         <span class="badge badge-pill bg-soft-success text-success me-2">
-                            Successful
+                            Muvaffaqiyatli
                         </span>
                     {% endif %}
                 </td>
@@ -91,7 +91,7 @@
                 {% for i in paginator.page_range %}
                 {% if page_obj.number == i %}
                 <li class="page-item active" aria-current="page">
-                    <span class="page-link">{{ i }} <span class="visually-hidden">(current)</span></span>
+                    <span class="page-link">{{ i }} <span class="visually-hidden">(hozirgi)</span></span>
                 </li>
                 {% else %}
                 <li class="page-item">

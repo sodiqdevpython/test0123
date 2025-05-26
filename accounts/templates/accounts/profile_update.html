@@ -8,50 +8,50 @@
           <div class="col-md-6 col-lg-6">
           <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
-              <h1 id="header" class="text-success">Edit Your Profile
+              <h1 id="header" class="text-success">Profilingizni tahrirlang
               </h1>
               <div class="float-label">
-                <label> username </label>
+                <label> Foydalanuvchi nomi </label>
                 <span class="text-danger">{{ u_form.username.errors }}</span>
                 {{ u_form.username }}
               </div>
               <br>
               <div class="float-label">
-                <label> email </label>
+                <label> Email </label>
                 <span class="text-danger">{{ u_form.email.errors }}</span>
                 {{ u_form.email }}
               </div>
               <br>
               <div class="float-label">
-                <label>secondary email </label>
+                <label>Ikkilamchi elektron pochta </label>
                 <span class="text-danger">{{ p_form.email.errors }}</span>
                 {{ p_form.email }}
               </div>
               <br>
               <div class="float-label">
-                <label> first name </label>
+                <label> Ism </label>
                 <span class="text-danger">{{ p_form.first_name.errors }}</span>
                 {{ p_form.first_name}}
               </div>
               <br>
               <div class="float-label">
-                <label> last name </label>
+                <label> Familiya </label>
                 <span class="text-danger">{{ p_form.last_name.errors }}</span>
                 {{ p_form.last_name}}
               </div>
               <br>
               <div class="float-label">
-                <label> mobile number </label>
+                <label> Telefon raqam </label>
                 <span class="text-danger">{{ p_form.telephone.errors }}</span>
                 {{ p_form.telephone}}
               </div>
               <br>
               <div class="float-label">
-                <label> lasttname </label>
+                <label> Profil rasmi </label>
                 {{ p_form.profile_picture}}
               </div>
               <br>
-              <button type="submit" class="btn btn-success">update</button>
+              <button type="submit" class="btn btn-success">Yangilash</button>
             </form>
               </div>
             </div>

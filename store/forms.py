@@ -76,27 +76,27 @@ class DeliveryForm(forms.ModelForm):
         widgets = {
             'item': forms.Select(attrs={
                 'class': 'form-control',
-                'placeholder': 'Select item',
+                'placeholder': 'Elementni tanlang',
             }),
             'customer_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter customer name',
+                'placeholder': 'Mijoz ismini kiriting',
             }),
             'phone_number': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter phone number',
+                'placeholder': 'Telefon raqamini kiriting',
             }),
             'location': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter delivery location',
+                'placeholder': 'Yetkazib berish joyini kiriting',
             }),
             'date': forms.DateTimeInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Select delivery date and time',
+                'placeholder': 'Yetkazib berish sanasi va vaqtini tanlang',
                 'type': 'datetime-local'
             }),
             'is_delivered': forms.CheckboxInput(attrs={
                 'class': 'form-check-input',
-                'label': 'Mark as delivered',
+                'label': 'Yetkazib berilgan deb belgilash',
             }),
         }
