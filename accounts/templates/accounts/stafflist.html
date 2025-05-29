@@ -3,7 +3,7 @@
 {% load render_table from django_tables2 %}
 {% load querystring from django_tables2 %}
 
-{% block title %}Staff{% endblock title %}
+{% block title %}Персонал{% endblock title %}
 
 {% block content %}
 <div class="container p-5">
@@ -14,23 +14,23 @@
       </style>
     <div class="d-flex justify-content-between mb-3">
         <a class="btn btn-success btn-sm" href="{% url 'profile-create' %}">
-            <i class="fa-solid fa-user-plus me-2"></i>Xodimlarni qo'shish
+            <i class="fa-solid fa-user-plus me-2"></i>Добавить сотрудников
         </a>
         <a class="btn btn-success btn-sm" href="{% querystring '_export'='xlsx' %}">
-            <i class="fa-solid fa-download me-2"></i>Excelga eksport qilish
+            <i class="fa-solid fa-download me-2"></i>Экспорт в Excel
         </a>
     </div>
     <table class="table table-sm table-bordered table-striped">
         <thead class="thead-light">
             <tr>
-                <th scope="col">Id <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Profil rasmi</th>
-                <th scope="col">Foydalanuvchi nomi<i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Telefon raqami</th>
-                <th scope="col">Holati <i class="fa-solid fa-sort"></i></th>
-                <th scope="col">Turi <i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Идентификатор <i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Изображение профиля</th>
+                <th scope="col">Имя пользователя<i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Номер телефона</th>
+                <th scope="col">Статус<i class="fa-solid fa-sort"></i></th>
+                <th scope="col">Тип<i class="fa-solid fa-sort"></i></th>
                 {% if user.profile.role == 'AD' or user.profile.role == 'EX' %}
-                <th scope="col">Harakat</th>
+                <th scope="col">Движение</th>
                 {% endif %}
             </tr>
         </thead>
@@ -45,20 +45,20 @@
                 <td>{{ profile.telephone }}</td>
                 <td>
                     {% if profile.status == 'A' %}
-                    <span class="badge bg-success text-light">Aktiv</span>
+                    <span class="badge bg-success text-light">Активный</span>
                     {% elif profile.status == 'OL' %}
-                    <span class="badge bg-warning text-dark">Ta'tilda</span>
+                    <span class="badge bg-warning text-dark">В отпуске</span>
                     {% else %}
-                    <span class="badge bg-danger text-light">Faol emas</span>
+                    <span class="badge bg-danger text-light">Не активен</span>
                     {% endif %}
                 </td>
                 <td>
                     {% if profile.role == 'AD' %}
-                    Admin
+                    Админ
                     {% elif profile.role == 'EX' %}
-                    Rahbar
+                    Исполнительный
                     {% else %}
-                    Operativ
+                    Оперативный
                     {% endif %}
                 </td>
                 <td>

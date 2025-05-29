@@ -30,7 +30,7 @@ class Category(models.Model):
         """
         String representation of the category.
         """
-        return f"Kategoriya: {self.name}"
+        return f"Категория: {self.name}"
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -54,8 +54,8 @@ class Item(models.Model):
         String representation of the item.
         """
         return (
-            f"{self.name} - Kategoriya: {self.category}, "
-            f"Miqdori: {self.quantity}"
+            f"{self.name} - Категория: {self.category}, "
+            f"Количество: {self.quantity}"
         )
 
     def get_absolute_url(self):
@@ -98,6 +98,6 @@ class Delivery(models.Model):
         String representation of the delivery.
         """
         return (
-            f"Yetkazib berish {self.item} ga {self.customer_name} "
-            f"{self.location} ga {self.date} da"
+            f"Доставка {self.item}  {self.customer_name} "
+            f"{self.location}  {self.date} "
         )

@@ -191,12 +191,12 @@ def SaleCreateView(request):
                 with transaction.atomic():
                     # Create the sale
                     new_sale = Sale.objects.create(**sale_attributes)
-                    logger.info(f"Sale created: {new_sale}")
+                    logger.info(f"Распродажа создана: {new_sale}")
 
                     # Create sale details and update item quantities
                     items = data["items"]
                     if not isinstance(items, list):
-                        raise ValueError("Items should be a list")
+                        raise ValueError("Элементы должны быть списком")
 
                     for item in items:
                         if not all(
@@ -204,11 +204,11 @@ def SaleCreateView(request):
                                 "id", "price", "quantity", "total_item"
                             ]
                         ):
-                            raise ValueError("Item is missing required fields")
+                            raise ValueError("В элементе отсутствуют обязательные поля")
 
                         item_instance = Item.objects.get(id=int(item["id"]))
                         if item_instance.quantity < int(item["quantity"]):
-                            raise ValueError(f"Not enough stock for item: {item_instance.name}")
+                            raise ValueError(f"Недостаточно запасов для товара: {item_instance.name}")
 
                         detail_attributes = {
                             "sale": new_sale,
@@ -218,7 +218,7 @@ def SaleCreateView(request):
                             "total_detail": float(item["total_item"])
                         }
                         SaleDetail.objects.create(**detail_attributes)
-                        logger.info(f"Sale detail created: {detail_attributes}")
+                        logger.info(f"Деталь продажи создана: {detail_attributes}")
 
                         # Reduce item quantity
                         item_instance.quantity -= int(item["quantity"])
@@ -236,35 +236,35 @@ def SaleCreateView(request):
                 return JsonResponse(
                     {
                         'status': 'error',
-                        'message': 'Invalid JSON format in request body!'
+                        'message': 'Неверный формат JSON в теле запроса!'
                     }, status=400)
             except Customer.DoesNotExist:
                 return JsonResponse({
                     'status': 'error',
-                    'message': 'Customer does not exist!'
+                    'message': 'Клиент не существует!'
                     }, status=400)
             except Item.DoesNotExist:
                 return JsonResponse({
                     'status': 'error',
-                    'message': 'Item does not exist!'
+                    'message': 'Товар не существует!'
                     }, status=400)
             except ValueError as ve:
                 return JsonResponse({
                     'status': 'error',
-                    'message': f'Value error: {str(ve)}'
+                    'message': f'Ошибка значения: {str(ve)}'
                     }, status=400)
             except TypeError as te:
                 return JsonResponse({
                     'status': 'error',
-                    'message': f'Type error: {str(te)}'
+                    'message': f'Ошибка типа: {str(te)}'
                     }, status=400)
             except Exception as e:
-                logger.error(f"Exception during sale creation: {e}")
+                logger.error(f"Исключение при создании продажи: {e}")
                 return JsonResponse(
                     {
                         'status': 'error',
                         'message': (
-                            f'There was an error during the creation: {str(e)}'
+                            f'При создании произошла ошибка: {str(e)}'
                         )
                     }, status=500)
 

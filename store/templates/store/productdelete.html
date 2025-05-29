@@ -1,15 +1,15 @@
-{% extends "store/base.html" %} {% block title %}Confirm delete{% endblock %}
+{% extends "store/base.html" %} {% block title %}Подтвердить удаление{% endblock %}
 {% block content %}
 <div class="container pt-5">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Elementni o'chirish</legend>
-            <h5>Haqiqatan ham elementni oʻchirib tashlamoqchimisiz "{{ object.name }}"</h5>
+            <legend class="border-bottom mb-4">Удалить элемент</legend>
+            <h5>Вы уверены, что хотите удалить элемент? "{{ object.name }}"</h5>
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-danger btn-sm" type="submit">O'chirish</button>
-            <a class="btn btn-outline-success btn-sm" href="{% url 'productslist' %}">Bekor qilish</a>
+            <button class="btn btn-outline-danger btn-sm" type="submit">Выключать</button>
+            <a class="btn btn-outline-success btn-sm" href="{% url 'productslist' %}">Отмена</a>
         </div>
     </form>
 </div>

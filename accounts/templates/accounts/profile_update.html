@@ -1,5 +1,5 @@
 {% extends 'store/base.html' %}
-{% block title %}Profile{% endblock %}
+{% block title %}Профиль{% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="container my-4">
@@ -8,50 +8,50 @@
           <div class="col-md-6 col-lg-6">
           <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
-              <h1 id="header" class="text-success">Profilingizni tahrirlang
+              <h1 id="header" class="text-success">Редактировать свой профиль
               </h1>
               <div class="float-label">
-                <label> Foydalanuvchi nomi </label>
+                <label> Имя пользователя </label>
                 <span class="text-danger">{{ u_form.username.errors }}</span>
                 {{ u_form.username }}
               </div>
               <br>
               <div class="float-label">
-                <label> Email </label>
+                <label> Электронная почта </label>
                 <span class="text-danger">{{ u_form.email.errors }}</span>
                 {{ u_form.email }}
               </div>
               <br>
               <div class="float-label">
-                <label>Ikkilamchi elektron pochta </label>
+                <label> Дополнительный адрес электронной почты </label>
                 <span class="text-danger">{{ p_form.email.errors }}</span>
                 {{ p_form.email }}
               </div>
               <br>
               <div class="float-label">
-                <label> Ism </label>
+                <label> Имя </label>
                 <span class="text-danger">{{ p_form.first_name.errors }}</span>
                 {{ p_form.first_name}}
               </div>
               <br>
               <div class="float-label">
-                <label> Familiya </label>
+                <label> Фамилия </label>
                 <span class="text-danger">{{ p_form.last_name.errors }}</span>
                 {{ p_form.last_name}}
               </div>
               <br>
               <div class="float-label">
-                <label> Telefon raqam </label>
+                <label> Номер телефона </label>
                 <span class="text-danger">{{ p_form.telephone.errors }}</span>
                 {{ p_form.telephone}}
               </div>
               <br>
               <div class="float-label">
-                <label> Profil rasmi </label>
+                <label> Изображение профиля </label>
                 {{ p_form.profile_picture}}
               </div>
               <br>
-              <button type="submit" class="btn btn-success">Yangilash</button>
+              <button type="submit" class="btn btn-success">Обновлять</button>
             </form>
               </div>
             </div>

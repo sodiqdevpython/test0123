@@ -2,7 +2,7 @@
 {% extends 'store/base.html' %}
 {% block content %}
   <div class="container m-5">
-    <h1 class="mb-4">{% if form.instance.pk %}Tahrirlash{% else %}Yaratish{% endif %} Mijoz</h1>
+    <h1 class="mb-4">{% if form.instance.pk %}Редактирование{% else %}Создание{% endif %} Клиент</h1>
     <form method="post">
       {% csrf_token %}
       <div class="row mb-3">
@@ -50,7 +50,7 @@
         </div>
       </div>
       <button type="submit" class="btn btn-primary">
-        <i class="fas fa-save"></i> Saqlash
+        <i class="fas fa-save"></i> Сохранять
       </button>
     </form>
   </div>

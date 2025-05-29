@@ -53,12 +53,12 @@ class CategoryForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter category name',
+                'placeholder': 'Введите название категории',
                 'aria-label': 'Category Name'
             }),
         }
         labels = {
-            'name': 'Category Name',
+            'name': 'Название категории',
         }
 
 
@@ -76,27 +76,27 @@ class DeliveryForm(forms.ModelForm):
         widgets = {
             'item': forms.Select(attrs={
                 'class': 'form-control',
-                'placeholder': 'Elementni tanlang',
+                'placeholder': 'Выберите элемент',
             }),
             'customer_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Mijoz ismini kiriting',
+                'placeholder': 'Введите имя клиента',
             }),
             'phone_number': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Telefon raqamini kiriting',
+                'placeholder': 'Введите номер телефона',
             }),
             'location': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Yetkazib berish joyini kiriting',
+                'placeholder': 'Введите место доставки',
             }),
             'date': forms.DateTimeInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Yetkazib berish sanasi va vaqtini tanlang',
+                'placeholder': 'Выберите дату и время доставки',
                 'type': 'datetime-local'
             }),
             'is_delivered': forms.CheckboxInput(attrs={
                 'class': 'form-check-input',
-                'label': 'Yetkazib berilgan deb belgilash',
+                'label': 'Отметить как доставленное',
             }),
         }

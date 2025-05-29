@@ -1,5 +1,5 @@
 {% extends 'store/base.html' %}
-{% block title %}Xodimlar sahifasi{% endblock %}
+{% block title %}Страница персонала{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -8,42 +8,42 @@
                 <div class="col-md-8">
                     <table class="table table-borderless">
                         <thead>
-                            <span class="h4">Profil haqida ma'lumot</span class="h4">
-                            <a class="btn btn-outline-success btn-sm float-end" href="{% url 'user-profile-update' %}">Profilni tahrirlash</a>
+                            <span class="h4">Информация профиля</span class="h4">
+                            <a class="btn btn-outline-success btn-sm float-end" href="{% url 'user-profile-update' %}">Редактировать профиль</a>
                             <hr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Foydalanuvchi nomi</th>
+                                <th scope="row">Имя пользователя</th>
                                 <td>{{ user.username }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Xodimlarning roli</th>
+                                <th scope="row">Роль сотрудников</th>
                                 <td>
                                     <span class="badge badge-pill bg-soft-success text-success me-2">
                                     {% if user.profile.role == 'AD' %}
-                                    Admin
+                                    Админ
                                     {% elif user.profile.role == 'EX' %}
-                                    Rahbar
+                                    Исполнительный
                                     {% else %}
-                                    Operativ
+                                    Оперативный
                                     {% endif %}
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">Ism</th>
+                                <th scope="row">Имя</th>
                                 <td>{{ user.profile.first_name }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Familiya</th>
+                                <th scope="row">Фамилия</th>
                                 <td>{{ user.profile.last_name }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Email</th>
+                                <th scope="row">Электронная почта</th>
                                 <td>{{ user.email }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Telefon raqam</th>
+                                <th scope="row">Номер телефона</th>
                                 <td>{{ user.profile.telephone }}</td>
                             </tr>
                         </tbody>

@@ -1,4 +1,4 @@
-{% extends "store/base.html" %} {% load static %}{% block title %}Transaction detail{% endblock %}
+{% extends "store/base.html" %} {% load static %}{% block title %}Детали транзакции{% endblock %}
 {% block content %}
 <style>
 	section .receipt {
@@ -380,30 +380,30 @@
             <div class="produits">
                 <div class="hr-sm"></div>
                 <div class="col2">
-                    <p>Jami miqdor</p>
+                    <p>Общая сумма</p>
                     <p class="prix"><b>{{ sale.sub_total }}</b></p>
                 </div>
                 <br>
                 <div class="col2">
-                    <p>Soliq miqdori</p>
+                    <p>Сумма налога</p>
                     <p class="prix"><b>{{ sale.tax_amount }}</b></p>
                 </div>
                 <div class="col2">
-                    <p>Umumiy jami</p>
+                    <p>Oбщий итог</p>
                     <p class="prix"><b>{{ sale.grand_total }}</b></p>
                 </div>
                 <div class="col2">
-                    <p>To'langan miqdor</p>
+                    <p>Оплаченная сумма</p>
                     <p class="prix"><b>{{ sale.amount_paid }}</b></p>
                 </div>
                 <div class="col2">
-                    <p>Balans</p>
+                    <p>Баланс</p>
                     <p class="prix"><b>{{ sale.amount_change }}</b></p>
                 </div>
             </div>
             <div class="hr-lg"></div>
             <div class="carte">
-                <p class="title-carte">Mijoz: {{ sale.customer.first_name }}</p>
+                <p class="title-carte">Клиент: {{ sale.customer.first_name }}</p>
             </div>
             <div class="hr-lg"></div>
         </div>

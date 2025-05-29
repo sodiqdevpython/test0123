@@ -2,7 +2,7 @@
 {% load static %}
 {% load render_table from django_tables2 %}
 {% load querystring from django_tables2 %}
-{% block title %}Deliveries{% endblock title %}
+{% block title %}Поставки{% endblock title %}
 {% block content %}
 <div class="container p-5">
     <style>
@@ -24,10 +24,10 @@
 
     <div class="d-flex justify-content-between mb-3">
         <a class="btn btn-success btn-sm" href="{% url 'delivery-create' %}">
-            Yetkazib berishni qo'shish
+            Добавить доставку
         </a>
         <a class="btn btn-success btn-sm" href="{% querystring '_export'='xlsx' %}">
-            <i class="fa-solid fa-download"></i> Excelga eksport qilish
+            <i class="fa-solid fa-download"></i> Экспорт в Excel
         </a>
     </div>
 
@@ -35,14 +35,14 @@
         <table class="table table-bordered table-striped table-hover table-sm">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col"><a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">ID <i class="fa-solid fa-sort"></i></a></th>
-                    <th scope="col">Nomi <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Mijoz ismi <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Aloqa <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Manzil <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Yetkazib berish sanasi <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Yetkazib berish holati <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Harakat <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col"><a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">Идентификатор <i class="fa-solid fa-sort"></i></a></th>
+                    <th scope="col">Имя <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Имя клиента <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Коммуникация <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Адрес <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Дата доставки <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Статус доставки <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Движение <i class="fa-solid fa-sort"></i></th>
                 </tr>
             </thead>
             <tbody>
@@ -56,17 +56,17 @@
                     <td>{{ delivery.date }}</td>
                     <td>
                         {% if delivery.is_delivered %}
-                        <span class="badge bg-success text-white">Yetkazib berildi</span>
+                        <span class="badge bg-success text-white">Доставленный</span>
                         {% else %}
-                        <span class="badge bg-danger text-white">Kutilmoqda</span>
+                        <span class="badge bg-danger text-white">Ожидающий</span>
                         {% endif %}
                     </td>
                     <td>
                         <a class="btn btn-outline-info btn-sm" href="{% url 'delivery-update' delivery.pk %}">
-                            <i class="fa-solid fa-pen"></i> Tahrirlash
+                            <i class="fa-solid fa-pen"></i> Редактирование
                         </a>
                         <a class="btn btn-outline-danger btn-sm float-end" href="{% url 'delivery-delete' delivery.pk %}">
-                            <i class="fa-solid fa-trash"></i> O'chirish
+                            <i class="fa-solid fa-trash"></i> Выключать
                         </a>
                     </td>
                 </tr>
@@ -94,7 +94,7 @@
             {% for i in paginator.page_range %}
             {% if page_obj.number == i %}
             <li class="page-item active" aria-current="page">
-                <span class="page-link">{{ i }} <span class="visually-hidden">(hozirgi)</span></span>
+                <span class="page-link">{{ i }} <span class="visually-hidden">(подарок)</span></span>
             </li>
             {% else %}
             <li class="page-item">

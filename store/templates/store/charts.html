@@ -1,7 +1,7 @@
 <div class="row">
     <div class="card shadow border-0 mb-7 col-md-6 col-lg-6">
         <div class="card-body">
-            <h5 class="card-title">Kategoriyalarni taqsimlash</h5>
+            <h5 class="card-title">Распределение категорий</h5>
             <div class="chart-container">
                 <canvas id="pieChart"></canvas>
             </div>
@@ -9,7 +9,7 @@
     </div>
     <div class="card shadow border-0 mb-7 col-md-6 col-lg-6">
         <div class="card-body">
-            <h5 class="card-title">Vaqt o'tishi bilan sotish</h5>
+            <h5 class="card-title">Продажи со временем</h5>
             <div class="chart-container">
                 <canvas id="lineChart"></canvas>
             </div>
@@ -50,7 +50,7 @@
                 },
                 title: {
                     display: true,
-                    text: 'Kategoriyalarni taqsimlash',
+                    text: 'Распределение категорий',
                     font: {
                         size: 16
                     }
@@ -68,7 +68,7 @@
         data: {
             labels: {{ sale_dates_labels|safe }},
             datasets: [{
-                label: "Vaqt o'tishi bilan sotish",
+                label: "Продажи со временем",
                 data: {{ sale_dates_values|safe }},
                 fill: false,
                 borderColor: '#4BC0C0',
@@ -90,7 +90,7 @@
                 },
                 title: {
                     display: true,
-                    text: "Vaqt o'tishi bilan sotish",
+                    text: "Продажи со временем",
                     font: {
                         size: 16
                     }

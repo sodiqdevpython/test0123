@@ -10,14 +10,14 @@
         <div class="card shadow-sm rounded p-3">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h4 class="display-6 mb-0 text-success">Mahsulot</h4>
+                    <h4 class="display-6 mb-0 text-success">Продукт</h4>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end gap-2">
                     <a class="btn btn-success btn-sm rounded-pill shadow-sm" href="{% url 'product-create' %}">
-                        <i class="fa-solid fa-plus"></i> Element qo'shish
+                        <i class="fa-solid fa-plus"></i> Добавить элемент
                     </a>
                     <a class="btn btn-success btn-sm rounded-pill shadow-sm" href="{% querystring '_export'='xlsx' %}">
-                        <i class="fa-solid fa-download"></i> Excelga eksport qilish
+                        <i class="fa-solid fa-download"></i> Экспорт в Excel
                     </a>
                 </div>
             </div>
@@ -34,14 +34,14 @@
         <table class="table table-bordered table-striped table-hover table-sm">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col"><a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">ID <i class="fa-solid fa-sort"></i></a></th>
-                    <th scope="col">Nomi <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Kategoriya <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Miqdori <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Narxi <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Yaroqlilik muddati <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Sotuvchi <i class="fa-solid fa-sort"></i></th>
-                    <th scope="col">Harakat</th>
+                    <th scope="col"><a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">Идентификатор <i class="fa-solid fa-sort"></i></a></th>
+                    <th scope="col">Имя <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Категория <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Количество <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Цена <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Дата истечения срока действия <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Продавец <i class="fa-solid fa-sort"></i></th>
+                    <th scope="col">Движение</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,10 +56,10 @@
                     <td>{{ item.vendor }}</td>
                     <td>
                         <a class="btn btn-outline-info btn-sm" href="{% url 'product-update' item.slug %}">
-                            <i class="fa-solid fa-pen"></i> Tahrirlash
+                            <i class="fa-solid fa-pen"></i> Редактирование
                         </a>
                         <a class="btn btn-outline-danger btn-sm float-end" href="{% url 'product-delete' item.slug %}">
-                            <i class="fa-solid fa-trash"></i> O'chirish
+                            <i class="fa-solid fa-trash"></i> Выключать
                         </a>
                     </td>
                 </tr>
@@ -87,7 +87,7 @@
             {% for i in paginator.page_range %}
             {% if page_obj.number == i %}
             <li class="page-item active" aria-current="page">
-                <span class="page-link">{{ i }} <span class="visually-hidden">(hozirgi)</span></span>
+                <span class="page-link">{{ i }} <span class="visually-hidden">(подарок)</span></span>
             </li>
             {% else %}
             <li class="page-item">

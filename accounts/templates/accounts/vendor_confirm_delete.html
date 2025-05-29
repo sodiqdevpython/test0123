@@ -3,15 +3,15 @@
 
 {% block content %}
 <div class="container px-5">
-    <h1 class="my-4">Oʻchirishni tasdiqlang</h1>
-    <p>Haqiqatan ham oʻchirib tashlamoqchimisiz "{{ object.name }}"?</p>
+    <h1 class="my-4">Подтвердите удаление</h1>
+    <p>Вы уверены, что хотите удалить? "{{ object.name }}"?</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">
-            <i class="fas fa-trash-alt"></i> Tasdiqlash
+            <i class="fas fa-trash-alt"></i> Подтверждение
         </button>
         <a href="{% url 'vendor-list' %}" class="btn btn-secondary">
-            <i class="fas fa-arrow-left"></i> Bekor qilish
+            <i class="fas fa-arrow-left"></i> Отмена
         </a>
     </form>
 </div>

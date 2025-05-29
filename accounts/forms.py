@@ -60,28 +60,28 @@ class CustomerForm(forms.ModelForm):
         widgets = {
             'first_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Ism'
+                'placeholder': 'Имя'
             }),
             'last_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Familiya'
+                'placeholder': 'Фамилия'
             }),
             'address': forms.Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Manzil',
+                'placeholder': 'Адрес',
                 'rows': 3
             }),
             'email': forms.EmailInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Email'
+                'placeholder': 'Электронная почта'
             }),
             'phone': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Telefon raqam'
+                'placeholder': 'Номер телефона'
             }),
             'loyalty_points': forms.NumberInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Imtiyoz ballari'
+                'placeholder': 'Очки привилегий'
             }),
         }
 
@@ -93,12 +93,12 @@ class VendorForm(forms.ModelForm):
         fields = ['name', 'phone_number', 'address']
         widgets = {
             'name': forms.TextInput(
-                attrs={'class': 'form-control', 'placeholder': 'Vendor Name'}
+                attrs={'class': 'form-control', 'placeholder': 'Имя поставщика'}
             ),
             'phone_number': forms.NumberInput(
-                attrs={'class': 'form-control', 'placeholder': 'Phone Number'}
+                attrs={'class': 'form-control', 'placeholder': 'Номер телефона'}
             ),
             'address': forms.TextInput(
-                attrs={'class': 'form-control', 'placeholder': 'Address'}
+                attrs={'class': 'form-control', 'placeholder': 'Адрес'}
             ),
         }
